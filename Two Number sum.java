@@ -38,3 +38,33 @@ class Program {
 		}
 	}
 }
+
+----------------------------------------------------------------------------
+	
+import java.util.*;
+
+class Program {
+  public static int[] twoNumberSum(int[] array, int targetSum) {
+    // Write your code here.
+		// using extra space , map of value to index
+		int[] result = new int[2];
+		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for(int i=0; i < array.length; i++){
+			map.put(array[i] , i);
+		}
+		
+		for(int i=0; i < array.length; i++){
+			int findEle = targetSum - array[i];
+			if(map.containsKey(findEle)){
+				if(map.get(findEle) > i){
+					result[0] = findEle;
+					result[1] = array[i];
+					return result;
+				}
+			}
+		}
+		
+    return new int[0];
+  }
+}
+
