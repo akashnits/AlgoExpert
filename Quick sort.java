@@ -7,7 +7,7 @@ class Program {
   }
 	
 	private static void quickSortHelper(int[] array, int start, int end){
-		if(start >= end){
+		if(start > end){
 			return;
 		}
 		
@@ -18,6 +18,8 @@ class Program {
 		while(left <= right){
 			if(array[left] > array[pivot] && array[right] < array[pivot]){
 				swap(array, left, right);
+				left++;
+				right--;
 			}
 			
 			if(array[left] <= array[pivot]){
