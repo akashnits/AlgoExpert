@@ -27,3 +27,37 @@ class Program {
     }
   }
 }
+
+// recursive approach
+
+import java.util.*;
+
+class Program {
+	static LinkedList result;
+  public static LinkedList reverseLinkedList(LinkedList head) {
+		
+		reverse(null, head);
+    return result;
+  }
+	
+	private static void reverse(LinkedList prev, LinkedList curr){
+		if(curr == null){
+			result = prev;
+			return;
+		}
+		
+		LinkedList next = curr.next;
+		curr.next = prev;
+		reverse(curr, next);
+	}
+
+  static class LinkedList {
+    int value;
+    LinkedList next = null;
+
+    public LinkedList(int value) {
+      this.value = value;
+    }
+  }
+}
+
