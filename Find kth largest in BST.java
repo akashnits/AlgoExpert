@@ -1,7 +1,6 @@
 import java.util.*;
 
 class Program {
-  // This is an input class. Do not edit.
   static class BST {
     public int value;
     public BST left = null;
